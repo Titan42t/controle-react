@@ -11,7 +11,7 @@ body {
   width: 100%;
 }
 
-button {
+#root button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
@@ -24,14 +24,14 @@ button {
   transition: all 0.25s;
   outline: none;
 }
-button:hover {
+#root button:hover {
   background-color: #45627d;
 }
-button:focus-visible {
+#root button:focus-visible {
   box-shadow: inset 0 0 0 2px #45627d, inset 0 0 0 4px #6589ab;
 }
 
-input[type="checkbox"] {
+#root input[type="checkbox"] {
   appearance: none;
   background-color: transparent;
   border: 1px solid #1e3041;
@@ -41,11 +41,11 @@ input[type="checkbox"] {
   cursor: pointer;
   transition: all 0.25s;
 }
-input[type="checkbox"]:checked {
+#root input[type="checkbox"]:checked {
   background-color: #1e3041;
 }
 
-.main {
+#root .main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,14 +59,14 @@ input[type="checkbox"]:checked {
     sans-serif;
 }
 
-.main-title {
+#root .main-title {
   font-size: 3rem;
   font-weight: bold;
   margin: 0 0 2rem;
   text-shadow: 0 -1px 1px #415c71;
 }
 
-.new-recipe-form {
+#root .new-recipe-form {
   display: flex;
   align-items: stretch;
   gap: 0.5rem;
@@ -76,7 +76,7 @@ input[type="checkbox"]:checked {
   margin-bottom: 2rem;
 }
 
-.recipe-title-input {
+#root .recipe-title-input {
   font-size: 1.5rem;
   font-weight: 500;
   border: none;
@@ -86,7 +86,7 @@ input[type="checkbox"]:checked {
   color: #1e3041;
 }
 
-.recipe-create-button {
+#root .recipe-create-button {
   outline: none;
   border: none;
   font-size: 1.5rem;
@@ -95,11 +95,11 @@ input[type="checkbox"]:checked {
   transition: background-color 0.2s ease-in-out;
 }
 
-.recipe-create-button:hover {
+#root .recipe-create-button:hover {
   background-color: #415c71;
 }
 
-.recipe-book {
+#root .recipe-book {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -112,7 +112,7 @@ input[type="checkbox"]:checked {
   margin-bottom: 2rem;
 }
 
-.recipe {
+#root .recipe {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,40 +120,40 @@ input[type="checkbox"]:checked {
   padding: 1rem;
 }
 
-.recipe:not(:last-child) {
+#root .recipe:not(:last-child) {
   border-bottom: 1px solid #ececec;
 }
 
-.recipe-title {
+#root .recipe-title {
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.recipe-actions {
+#root .recipe-actions {
   display: flex;
   gap: 0.5rem;
 }
 
-.recipe-edit-button {
+#root .recipe-edit-button {
   outline: none;
   border-color: #1e3041;
   background-color: transparent;
   color: #1e3041;
   transition: all 0.2s ease-in-out;
 }
-.recipe-edit-button:hover {
+#root .recipe-edit-button:hover {
   border-color: #45627d;
   background-color: transparent;
   color: #45627d;
 }
 
-.recipe-delete-button {
+#root .recipe-delete-button {
   outline: none;
   border: none;
   transition: all 0.2s ease-in-out;
 }
 
-.recipe-edit-form {
+#root .recipe-edit-form {
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
@@ -163,7 +163,7 @@ input[type="checkbox"]:checked {
   width: 100%;
 }
 
-.recipe-edit-title-input {
+#root .recipe-edit-title-input {
   display: block;
   font-size: 1.5rem;
   font-weight: 500;
@@ -176,7 +176,7 @@ input[type="checkbox"]:checked {
   box-sizing: border-box;
 }
 
-.recipe-edit-description-input {
+#root .recipe-edit-description-input {
   display: block;
   font-size: 1rem;
   font-weight: 500;
@@ -189,14 +189,14 @@ input[type="checkbox"]:checked {
   box-sizing: border-box;
 }
 
-.recipe-ingredients-title {
+#root .recipe-ingredients-title {
   font-size: 1.2rem;
   font-weight: 800;
   margin: 0;
   padding: 1rem;
 }
 
-.recipe-ingredients-list {
+#root .recipe-ingredients-list {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -205,7 +205,7 @@ input[type="checkbox"]:checked {
   margin: 0;
 }
 
-.recipe-ingredient, .recipe-new-ingredient {
+#root .recipe-ingredient, .recipe-new-ingredient {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -215,7 +215,7 @@ input[type="checkbox"]:checked {
   background-color: #ececec;
 }
 
-.recipe-ingredient-input, .recipe-new-ingredient-input {
+#root .recipe-ingredient-input, .recipe-new-ingredient-input {
   flex: 1;
   font-size: 1rem;
   font-weight: 500;
@@ -226,20 +226,20 @@ input[type="checkbox"]:checked {
   color: #1e3041;
 }
 
-.recipe-new-ingredient {
+#root .recipe-new-ingredient {
   align-items: stretch;
   padding: 0;
 }
 
-.recipe-new-ingredient-input {
+#root .recipe-new-ingredient-input {
   padding: 1rem;
 }
 
-.recipe-edit-save-button, .recipe-edit-cart-button {
+#root .recipe-edit-save-button, .recipe-edit-cart-button {
   flex: 1;
 }
 
-.recipe-ingredient-delete-button {
+#root .recipe-ingredient-delete-button {
   opacity: 0;
   outline: none;
   border-color: #1e3041;
@@ -248,22 +248,22 @@ input[type="checkbox"]:checked {
   transition: all 0.2s ease-in-out;
   padding: 0.3rem 0.5rem;
 }
-.recipe-ingredient-delete-button:hover {
+#root .recipe-ingredient-delete-button:hover {
   border-color: #45627d;
   background-color: transparent;
   color: #45627d;
 }
-.recipe-ingredient:hover .recipe-ingredient-delete-button {
+#root .recipe-ingredient:hover .recipe-ingredient-delete-button {
   opacity: 1;
 }
 
-.recipe-edit-actions {
+#root .recipe-edit-actions {
   display: flex;
   gap: 0.5rem;
   padding: 1rem;
 }
 
-.shopping-list {
+#root .shopping-list {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -276,14 +276,14 @@ input[type="checkbox"]:checked {
   margin-bottom: 2rem;
 }
 
-.shopping-list-title {
+#root .shopping-list-title {
   font-size: 1.2rem;
   font-weight: 800;
   margin: 0;
   padding: 1rem;
 }
 
-.shopping-list-item {
+#root .shopping-list-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -291,7 +291,7 @@ input[type="checkbox"]:checked {
   cursor: pointer;
 }
 
-.shopping-list-actions {
+#root .shopping-list-actions {
   display: flex;
   gap: 0.5rem;
   padding: 1rem;

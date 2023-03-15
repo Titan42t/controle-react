@@ -33,6 +33,11 @@ export function App() {
   const [isEditing, setIsEditing] = useState(false)
   const [currentRecipe, setCurrentRecipe] = useState({})
 
+  const [shopping, setShopping] = useState([
+    "1 onion",
+    "2 carrots"
+  ])
+
   function nextIndex() {
     let maxId = 0
     recipes.forEach((recipe) => {
@@ -94,9 +99,7 @@ export function App() {
 
   function deleteIngredient(index) {
     var newRecipe = {...currentRecipe}
-    console.log(newRecipe)
-    newRecipe.ingredients.splice(index, 1)
-    console.log(index)
+    var newRecipe = newRecipe.ingredients.splice(index, 1)
     setCurrentRecipe(newRecipe)
   }
 
@@ -120,6 +123,26 @@ export function App() {
     setIsEditing(false)
   }
 
+  function addShoppingList() {
+    var shoppingList = [...shopping]
+    shoppingList.push(...currentRecipe.ingredients)
+    setShopping(shoppingList)
+  }
+
+  function checkAll() {
+    const items = document.querySelectorAll('.shopping-list-item input')
+    for(let i = 0; i < items.length; i++) {
+      items[i].checked = true
+    }
+  }
+
+  function uncheckAll() {
+    const items = document.querySelectorAll('.shopping-list-item input')
+    for(let i = 0; i < items.length; i++) {
+      items[i].checked = false
+    }
+  }
+
   return (
     <div className="main">
       <h1 className="main-title">Recipe Book</h1>
@@ -140,6 +163,7 @@ export function App() {
           handleSave={handleSave}
           handleSubmit={handleSubmit}
           deleteIngredient={deleteIngredient}
+          addShoppingList={addShoppingList}
         />
       }
 
@@ -147,20 +171,16 @@ export function App() {
       <div className="shopping-list">
         <h2 className="shopping-list-title">Shopping list</h2>
         <ul className="recipe-ingredients-list">
-          <li className="recipe-ingredient">
-            <label className="shopping-list-item"><input type="checkbox"/> 1 onion</label>
-          </li>
-          <li className="recipe-ingredient">
-            <label className="shopping-list-item"><input type="checkbox"/> 2 carrots</label>
-          </li>
-          <li className="recipe-ingredient">
-            <label className="shopping-list-item"><input type="checkbox"/> 3 potatoes</label>
-          </li>
+          {shopping.map((item, index) => (
+            <li className="recipe-ingredient" key={index}>
+              <label className="shopping-list-item"><input type="checkbox"/>{item}</label>
+            </li>
+          ))}
         </ul>
         <div className="shopping-list-actions">
-          <button className="shopping-list-clear-button">Check all</button>
+          <button className="shopping-list-clear-button" onClick={checkAll}>Check all</button>
           <button className="shopping-list-clear-button">Clear checked items</button>
-          <button className="shopping-list-clear-button">Clear all</button>
+          <button className="shopping-list-clear-button" onClick={uncheckAll}>Clear all</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-export function RecipeEdit({recipe, handleChange, handleSave, handleSubmit, deleteIngredient}) {
+export function RecipeEdit({recipe, handleChange, handleSave, handleSubmit, deleteIngredient, addShoppingList}) {
     return(
         <div className="recipe-edit-form">
             <input type="text" className="recipe-edit-title-input" onChange={(e) => handleChange(e, 'input')} value={recipe.name}/>
@@ -20,7 +20,7 @@ export function RecipeEdit({recipe, handleChange, handleSave, handleSubmit, dele
             </ul>
             <div className="recipe-edit-actions">
                 <button className="recipe-edit-save-button" onClick={handleSave}>Save</button>
-                <button className="recipe-edit-cart-button">Add to shopping list</button>
+                <button className="recipe-edit-cart-button" onClick={addShoppingList}>Add to shopping list</button>
             </div>
         </div>
     )
